@@ -9,7 +9,7 @@ from discord.interactions import Interaction
 
 from api import TotalBalanceTrigger
 
-log = logging.getLogger("DeBunk")
+log = logging.getLogger("DeBank")
 
 with open("creds.json") as f:
     CREDENTIALS = json.load(f)
@@ -55,7 +55,7 @@ async def debank_total_balance(interaction: Interaction, profile: str, output: s
 async def send_total_balance(data: TotalBalanceTrigger):
     """Send the total balance to the specified output."""
 
-    url = f"{SERVICE_URL}/debunk/total_balance"
+    url = f"{SERVICE_URL}/debank/total_balance"
     json = data.model_dump()
 
     async with (
